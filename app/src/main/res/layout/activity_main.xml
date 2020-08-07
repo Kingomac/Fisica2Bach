@@ -6,799 +6,108 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:paddingHorizontal="5dp"
-        android:paddingVertical="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Física 2º Bach"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_weight="1"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Campo gravitatorio"
+            android:textAlignment="center" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView40"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Órbita circular"
-                android:textAlignment="center"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="39dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/G_const" />
-
-                <EditText
-                    android:id="@+id/gConst"
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned|numberDecimal" />
-
-                <TextView
-                    android:layout_width="33dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/exponential_10"
-                    android:textAlignment="center" />
-
-                <EditText
-                    android:id="@+id/gConstExp"
-                    android:layout_width="15dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned" />
-
-                <TextView
-                    android:layout_width="53dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/G_const_unit"
-                    android:textAlignment="textStart" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="39dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Masa del planeta" />
-
-                <EditText
-                    android:id="@+id/planetMass"
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned|number|numberDecimal" />
-
-                <TextView
-                    android:layout_width="33dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/exponential_10"
-                    android:textAlignment="center" />
-
-                <EditText
-                    android:id="@+id/planetMassExp"
-                    android:layout_width="15dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned" />
-
-                <TextView
-                    android:layout_width="53dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="kg"
-                    android:textAlignment="textStart" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="39dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Masa del satélite" />
-
-                <EditText
-                    android:id="@+id/satelMass"
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned|number|numberDecimal" />
-
-                <TextView
-                    android:layout_width="33dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/exponential_10"
-                    android:textAlignment="center" />
-
-                <EditText
-                    android:id="@+id/satelMassExp"
-                    android:layout_width="15dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned" />
-
-                <TextView
-                    android:layout_width="53dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="kg"
-                    android:textAlignment="textStart" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="39dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Distancia entre centros" />
-
-                <EditText
-                    android:id="@+id/centerDist"
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned|number|numberDecimal" />
-
-                <TextView
-                    android:layout_width="33dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/exponential_10"
-                    android:textAlignment="center" />
-
-                <EditText
-                    android:id="@+id/centerDistExp"
-                    android:layout_width="15dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned" />
-
-                <TextView
-                    android:layout_width="53dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="m"
-                    android:textAlignment="textStart" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="39dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Velocidad angular" />
-
-                <EditText
-                    android:id="@+id/angularVel"
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned|number|numberDecimal" />
-
-                <TextView
-                    android:layout_width="33dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/exponential_10"
-                    android:textAlignment="center" />
-
-                <EditText
-                    android:id="@+id/angularVelExp"
-                    android:layout_width="15dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned" />
-
-                <TextView
-                    android:layout_width="53dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="rad/s"
-                    android:textAlignment="textStart" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="39dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Velocidad" />
-
-                <EditText
-                    android:id="@+id/vel"
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned|number|numberDecimal" />
-
-                <TextView
-                    android:layout_width="33dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/exponential_10"
-                    android:textAlignment="center" />
-
-                <EditText
-                    android:id="@+id/velExp"
-                    android:layout_width="15dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned" />
-
-                <TextView
-                    android:layout_width="53dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="m/s"
-                    android:textAlignment="textStart" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="39dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Periodo" />
-
-                <EditText
-                    android:id="@+id/period"
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned|number|numberDecimal" />
-
-                <TextView
-                    android:layout_width="33dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/exponential_10"
-                    android:textAlignment="center" />
-
-                <EditText
-                    android:id="@+id/periodExp"
-                    android:layout_width="15dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned" />
-
-                <TextView
-                    android:layout_width="53dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="s"
-                    android:textAlignment="textStart" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="39dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Frecuencia" />
-
-                <EditText
-                    android:id="@+id/freq"
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned|number|numberDecimal" />
-
-                <TextView
-                    android:layout_width="33dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/exponential_10"
-                    android:textAlignment="center" />
-
-                <EditText
-                    android:id="@+id/freqExp"
-                    android:layout_width="15dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned" />
-
-                <TextView
-                    android:layout_width="53dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Hz"
-                    android:textAlignment="textStart" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="39dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Momento angular" />
-
-                <EditText
-                    android:id="@+id/angularMoment"
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned|number|numberDecimal" />
-
-                <TextView
-                    android:layout_width="33dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/exponential_10"
-                    android:textAlignment="center" />
-
-                <EditText
-                    android:id="@+id/angularMomentExp"
-                    android:layout_width="15dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned" />
-
-                <TextView
-                    android:layout_width="53dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="kg · m^2 /s"
-                    android:textAlignment="textStart" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="39dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Momento lineal" />
-
-                <EditText
-                    android:id="@+id/linearMoment"
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned|number|numberDecimal" />
-
-                <TextView
-                    android:layout_width="33dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/exponential_10"
-                    android:textAlignment="center" />
-
-                <EditText
-                    android:id="@+id/linearMomentExp"
-                    android:layout_width="15dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned" />
-
-                <TextView
-                    android:layout_width="53dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="kg · m/s"
-                    android:textAlignment="textStart" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="39dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Momento de la fuerza" />
-
-                <EditText
-                    android:id="@+id/forceMoment"
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned|number|numberDecimal" />
-
-                <TextView
-                    android:layout_width="33dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/exponential_10"
-                    android:textAlignment="center" />
-
-                <EditText
-                    android:id="@+id/forceMomentExp"
-                    android:layout_width="15dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned" />
-
-                <TextView
-                    android:layout_width="53dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="N · m"
-                    android:textAlignment="textStart" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="39dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Energía cinética" />
-
-                <EditText
-                    android:id="@+id/cineticEnergy"
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned|number|numberDecimal" />
-
-                <TextView
-                    android:layout_width="33dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/exponential_10"
-                    android:textAlignment="center" />
-
-                <EditText
-                    android:id="@+id/cineticEnergyExp"
-                    android:layout_width="15dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned" />
-
-                <TextView
-                    android:layout_width="53dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="J"
-                    android:textAlignment="textStart" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="39dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Energía potencial" />
-
-                <EditText
-                    android:id="@+id/potentialEnergy"
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned|number|numberDecimal" />
-
-                <TextView
-                    android:layout_width="33dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/exponential_10"
-                    android:textAlignment="center" />
-
-                <EditText
-                    android:id="@+id/potentialEnergyExp"
-                    android:layout_width="15dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned" />
-
-                <TextView
-                    android:layout_width="53dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="J"
-                    android:textAlignment="textStart" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="39dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Energía mecánica" />
-
-                <EditText
-                    android:id="@+id/mechanicalEnergy"
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned|number|numberDecimal" />
-
-                <TextView
-                    android:layout_width="33dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/exponential_10"
-                    android:textAlignment="center" />
-
-                <EditText
-                    android:id="@+id/mechanicalEnergyExp"
-                    android:layout_width="15dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned" />
-
-                <TextView
-                    android:layout_width="53dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="J"
-                    android:textAlignment="textStart" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="39dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="g_0" />
-
-                <EditText
-                    android:id="@+id/g0"
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned|number|numberDecimal" />
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="33dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/exponential_10"
-                    android:textAlignment="center" />
-
-                <EditText
-                    android:id="@+id/g0Exp"
-                    android:layout_width="15dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned" />
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="53dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="m/s^2"
-                    android:textAlignment="textStart" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="39dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Radio del planeta" />
-
-                <EditText
-                    android:id="@+id/planetRadio"
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned|number|numberDecimal" />
-
-                <TextView
-                    android:layout_width="33dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/exponential_10"
-                    android:textAlignment="center" />
-
-                <EditText
-                    android:id="@+id/planetRadioExp"
-                    android:layout_width="15dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="numberSigned" />
-
-                <TextView
-                    android:layout_width="53dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="m"
-                    android:textAlignment="textStart" />
-
-            </LinearLayout>
+            android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:text="Calcular" />
+                android:id="@+id/button6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Gravitación"
+                android:textSize="12sp" />
 
             <Button
-                android:id="@+id/button2"
-                android:layout_width="match_parent"
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Limpiar campos" />
+                android:layout_weight="1"
+                android:onClick="onCircularOrbitClick"
+                android:text="Órbitas circulares"
+                android:textSize="12sp" />
 
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Órbitas elípticas"
+                android:textSize="12sp" />
         </LinearLayout>
 
-    </ScrollView>
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Física moderna"
+            android:textAlignment="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/relativityBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onRelativityClick"
+                android:text="Relativista" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cuántica" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nuclear" />
+
+        </LinearLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
