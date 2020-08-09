@@ -47,7 +47,7 @@
                     android:text="@string/G_const" />
 
                 <EditText
-                    android:id="@+id/gConst"
+                    android:id="@+id/inputGConst"
                     android:layout_width="70dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"

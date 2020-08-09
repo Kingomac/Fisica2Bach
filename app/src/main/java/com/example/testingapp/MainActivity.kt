@@ -29,4 +29,7 @@ class MainActivity : AppCompatActivity() {
     fun onRelativityClick(view: View) {
         startActivity(Intent(this, RelativityActivity::class.java))
     }
+    fun onGravityClick(view: View) {
+        startActivity(Intent(this, Gravitation::class.java))
+    }
 }

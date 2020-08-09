@@ -1,24 +1,22 @@
 package com.example.testingapp
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 
-import kotlinx.android.synthetic.main.activity_circular_orbit.*
 import kotlin.math.PI
-import kotlin.math.abs
 import kotlin.math.pow
 import kotlin.math.sqrt
+import android.content.Intent as Intent
 
 class CircularOrbit : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_circular_orbit)
 
-        ids = arrayOf(findViewById(R.id.gConst), findViewById(R.id.planetMass), findViewById(R.id.vel), findViewById(R.id.satelMass), findViewById(R.id.centerDist),
+        ids = arrayOf(findViewById(R.id.inputGConst), findViewById(R.id.planetMass), findViewById(R.id.vel), findViewById(R.id.satelMass), findViewById(R.id.centerDist),
             findViewById(R.id.angularVel), findViewById(R.id.period), findViewById(R.id.linearMoment), findViewById(R.id.forceMoment), findViewById(R.id.cineticEnergy),
             findViewById(R.id.potentialEnergy), findViewById(R.id.mechanicalEnergy), findViewById(R.id.g0), findViewById(R.id.planetRadio))
         idsExp = arrayOf(findViewById(R.id.gConstExp), findViewById(R.id.planetMassExp), findViewById(R.id.vel), findViewById(R.id.satelMassExp),
@@ -63,7 +61,7 @@ class CircularOrbit : AppCompatActivity() {
     private var idsExp:Array<EditText> = emptyArray()
 
     private fun setTexts() {
-        setText(findViewById<EditText>(R.id.gConst), findViewById<EditText>(R.id.gConstExp), gConst.toString())
+        setText(findViewById<EditText>(R.id.inputGConst), findViewById<EditText>(R.id.gConstExp), gConst.toString())
         setText(findViewById<EditText>(R.id.vel), findViewById<EditText>(R.id.velExp), satelVel.toString())
         setText(findViewById<EditText>(R.id.planetMass), findViewById<EditText>(R.id.planetMassExp), planetMass.toString())
         setText(findViewById<EditText>(R.id.satelMass), findViewById<EditText>(R.id.satelMassExp), satelMass.toString())
@@ -85,7 +83,7 @@ class CircularOrbit : AppCompatActivity() {
 
     private fun setVariables() {
         gConst = try {
-            getNumExponential(findViewById<EditText>(R.id.gConst).text.toString().toDouble(), findViewById<EditText>(R.id.gConstExp).text.toString().toInt())
+            getNumExponential(findViewById<EditText>(R.id.inputGConst).text.toString().toDouble(), findViewById<EditText>(R.id.gConstExp).text.toString().toInt())
         } catch (e: Exception){
             -1.0
         }
@@ -259,8 +257,7 @@ class CircularOrbit : AppCompatActivity() {
     private fun getNumExponential(num:Double, exp:Int): Double {
         return num * 10.0.pow(exp)
     }
-    public fun onReturnClick(view:View){
-        startActivity(Intent("MainActivity"))
+    fun onReturnClick(view: View){
+        startActivity(Intent(this, MainActivity::class.java))
     }
-
 }

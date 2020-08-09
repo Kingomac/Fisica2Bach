@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RelativityActivity"></activity>
+        <activity
+            android:name=".Gravitation"
+            android:label="@string/title_activity_gravitation"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".RelativityActivity" />
         <activity
             android:name=".CircularOrbit"
             android:label="@string/title_activity_circular_orbit"
