@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_gravitation.*
+import kotlin.math.pow
 
 class Gravitation : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,11 +43,21 @@ class Gravitation : AppCompatActivity() {
             pos_z.setText("")
             bodyList.adapter = RecyclerAdapter(bodies)
         } catch (e:Exception) {
-            Toast.makeText(this.applicationContext,"Escribeme los ceros vago", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this.applicationContext,"Escribe los ceros vago", Toast.LENGTH_SHORT).show()
         }
     }
-    fun gravityFieldInPoint(point:Vector) {
-        val gConst = inputGConst.text.toString().toDouble() * inputGConstE.text.toString().toDouble()
+    fun gravityFieldInPoint(view:View) {
+        val point = try {
+            Vector(point_x.text.toString().toDouble(), point_y.text.toString().toDouble(), point_z.text.toString().toDouble())
+        } catch (e:Exception) {
+            Toast.makeText(this.applicationContext, "Punto no encontrado. Escribe los ceros", Toast.LENGTH_SHORT).show()
+            return
+        }
+        val gConst = try {
+            inputGConst.text.toString().toDouble() * inputGConstE.text.toString().toDouble()
+        } catch (e:Exception) {
+            6.67 * 10.0.pow(-11)
+        }
         var result = Vector(0.0,0.0,0.0)
         for(b in bodies) {
             val distVector = Vector.subtraction(b.position,point)
@@ -54,5 +65,6 @@ class Gravitation : AppCompatActivity() {
             val finalVector = Vector.vectorMultipliedByDouble(field,Vector.getUnit(distVector))
             result = Vector.sum(result, finalVector)
         }
+        pointResult.text = "(${result.x}, ${result.y}, ${result.z})"
     }
 }
