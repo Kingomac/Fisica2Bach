@@ -2,6 +2,7 @@ package com.example.testingapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -61,10 +62,17 @@ class Gravitation : AppCompatActivity() {
         var result = Vector(0.0,0.0,0.0)
         for(b in bodies) {
             val distVector = Vector.subtraction(b.position,point)
-            val field = gConst * b.mass / Vector.getModule(distVector)
+            val field = gConst * b.mass / Vector.getModule(distVector).pow(2)
+            Log.d("FIELD", field.toString())
             val finalVector = Vector.vectorMultipliedByDouble(field,Vector.getUnit(distVector))
             result = Vector.sum(result, finalVector)
         }
-        pointResult.text = "(${result.x}, ${result.y}, ${result.z})"
+        pointResult.text = "(${result.x}, ${result.y}, ${result.z}) N/kg"
+        val bodyMass:Vector = try {
+            Vector.vectorMultipliedByDouble(bodyInPointMass.text.toString().toDouble(), result)
+        } catch (e:Exception) {
+            Vector(0.0,0.0,0.0)
+        }
+        forceResult.text = "$bodyMass N"
     }
 }
