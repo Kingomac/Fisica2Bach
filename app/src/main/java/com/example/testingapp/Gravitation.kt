@@ -16,7 +16,7 @@ class Gravitation : AppCompatActivity() {
         setContentView(R.layout.activity_gravitation)
 
         viewManager = LinearLayoutManager(this)
-        viewAdapter = RecyclerAdapter(arrayListOf())
+        viewAdapter = RecyclerAdapter(arrayListOf(), ::removeBody)
         bodyList.apply {
             layoutManager = viewManager
             adapter = viewAdapter
@@ -42,10 +42,14 @@ class Gravitation : AppCompatActivity() {
             pos_x.setText("")
             pos_y.setText("")
             pos_z.setText("")
-            bodyList.adapter = RecyclerAdapter(bodies)
+            bodyList.adapter = RecyclerAdapter(bodies, ::removeBody)
         } catch (e:Exception) {
             Toast.makeText(this.applicationContext,"Escribe los ceros vago", Toast.LENGTH_SHORT).show()
         }
+    }
+    private fun removeBody(index:Int) {
+        this.bodies.removeAt(index-1)
+        bodyList.adapter = RecyclerAdapter(bodies, ::removeBody)
     }
     fun gravityFieldInPoint(view:View) {
         val point = try {
