@@ -278,10 +278,43 @@
                 android:id="@+id/forceResult"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="2sp"
                 android:layout_weight="1"
                 android:text="Fuerza"
                 android:textAlignment="center"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/potentialText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2sp"
+                android:text="Potencial en ese punto:"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/potentialEnergyText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2sp"
+                android:text="Energía pontecial del cuerpo:"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/workToInfText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2sp"
+                android:text="Trabajo para mandar el cuerpo a infinito"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/workFromInfText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2sp"
+                android:text="Trabajo para traer el cuerpo desde el infinito"
+                android:textAlignment="center" />
 
             <Button
                 android:id="@+id/button12"

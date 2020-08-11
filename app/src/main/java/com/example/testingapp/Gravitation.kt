@@ -7,7 +7,9 @@ import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_circular_orbit.*
 import kotlinx.android.synthetic.main.activity_gravitation.*
+import kotlinx.android.synthetic.main.activity_gravitation.inputGConst
 import kotlin.math.pow
 
 class Gravitation : AppCompatActivity() {
@@ -63,20 +65,29 @@ class Gravitation : AppCompatActivity() {
         } catch (e:Exception) {
             6.67 * 10.0.pow(-11)
         }
-        var result = Vector(0.0,0.0,0.0)
+        var gravField = Vector(0.0,0.0,0.0)
+        var potential = 0.0
         for(b in bodies) {
             val distVector = Vector.subtraction(b.position,point)
-            val field = gConst * b.mass / Vector.getModule(distVector).pow(2)
-            Log.d("FIELD", field.toString())
+            val dist = Vector.getModule(distVector)
+            val field = gConst * b.mass / dist.pow(2)
             val finalVector = Vector.vectorMultipliedByDouble(field,Vector.getUnit(distVector))
-            result = Vector.sum(result, finalVector)
+            gravField = Vector.sum(gravField, finalVector)
+            potential += -gConst * b.mass / dist
         }
-        pointResult.text = "(${result.x}, ${result.y}, ${result.z}) N/kg"
-        val bodyMass:Vector = try {
-            Vector.vectorMultipliedByDouble(bodyInPointMass.text.toString().toDouble(), result)
+        pointResult.text = "(${gravField.x}, ${gravField.y}, ${gravField.z}) N/kg"
+
+        val bodyMass: Double = try {
+            bodyInPointMass.text.toString().toDouble()
         } catch (e:Exception) {
-            Vector(0.0,0.0,0.0)
+            0.0
         }
-        forceResult.text = "$bodyMass N"
+        val bodyInPointForce:Vector = Vector.vectorMultipliedByDouble(bodyMass, gravField)
+        forceResult.text = "(${bodyInPointForce.x}, ${bodyInPointForce.y}, ${bodyInPointForce.z}) N"
+        potentialText.text = "Potencial en ese punto: $potential N/J"
+        val potentialEnergy: Double = bodyMass * potential
+        potentialEnergyText.text = "Potencial del cuerpo: $potentialEnergy J"
+        workToInfText.text = "Trabajo para mandar el cuerpo a infinito: $potentialEnergy J"
+        workFromInfText.text = "Trabajo para traer el cuerpo desde el infinito: ${-potentialEnergy} J"
     }
 }
