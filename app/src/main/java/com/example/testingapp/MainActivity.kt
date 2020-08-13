@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        supportActionBar!!.title = "Física 2 Bach"
     }
 
     fun onCircularOrbitClick(view:View) {
@@ -31,5 +32,8 @@ class MainActivity : AppCompatActivity() {
     }
     fun onGravityClick(view: View) {
         startActivity(Intent(this, Gravitation::class.java))
+    }
+    fun onEllipticalOrbitClick(view: View) {
+        startActivity(Intent(this, EllipticalOrbit::class.java))
     }
 }

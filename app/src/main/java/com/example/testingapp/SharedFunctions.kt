@@ -1,6 +1,7 @@
 package com.example.testingapp
 
 import android.widget.EditText
+import android.widget.TextView
 import kotlin.math.abs
 import kotlin.math.sqrt
 
@@ -30,7 +31,7 @@ public fun getScienceNotation(num:Double): scienceNotationNumber {
     }
     return scienceNotationNumber(n, e)
 }
-public fun setText(numET:EditText, numExET:EditText, value:String){
+fun setFields(numET:EditText, numExET:EditText, value:String){
     var num = scienceNotationNumber(number = 0.0, exponential = 0)
     if(value.contains('E')) {
         num.number = value.substring(0, value.indexOf("E")).toDouble()
@@ -40,6 +41,18 @@ public fun setText(numET:EditText, numExET:EditText, value:String){
     }
     numET.setText(num.number.toString())
     numExET.setText(num.exponential.toString())
+}
+
+fun setTexts(numET:TextView, numExET:TextView, value:String){
+    var num = scienceNotationNumber(number = 0.0, exponential = 0)
+    if(value.contains('E')) {
+        num.number = value.substring(0, value.indexOf("E")).toDouble()
+        num.exponential = value.substring(value.indexOf("E") + 1, value.length).toInt()
+    } else {
+        num = getScienceNotation(value.toDouble())
+    }
+    numET.text = num.number.toString()
+    numExET.text = num.exponential.toString()
 }
 
 

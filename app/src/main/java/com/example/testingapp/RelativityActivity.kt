@@ -18,18 +18,18 @@ class RelativityActivity : AppCompatActivity() {
         setContentView(R.layout.activity_relativity)
     }
 
-    var velocity:Double = 0.0
-    var lightVel:Double = 0.0
-    var beta:Double = 0.0
-    var xi:Double = 0.0
-    var ownedTime = 0.0
-    var unownedTime = 0.0
-    var ownedLength = 0.0
-    var unownedLength = 0.0
-    var mass = 0.0
-    var energy = 0.0
-    var ownedMass = 0.0
-    var unownedMass = 0.0
+    private var velocity:Double = 0.0
+    private var lightVel:Double = 0.0
+    private var beta:Double = 0.0
+    private var xi:Double = 0.0
+    private var ownedTime = 0.0
+    private var unownedTime = 0.0
+    private var ownedLength = 0.0
+    private var unownedLength = 0.0
+    private var mass = 0.0
+    private var energy = 0.0
+    private var ownedMass = 0.0
+    private var unownedMass = 0.0
 
     private fun setVars() {
         velocity = try {
@@ -91,34 +91,34 @@ class RelativityActivity : AppCompatActivity() {
     private fun setTexts() {
         _xi.setText(xi.toString())
         _beta.setText(beta.toString())
-        setText(_ownedTime, _ownedTimeE, ownedTime.toString())
-        setText(_unownedTime, _unownedTimeE, unownedTime.toString())
-        setText(_ownedLength, _ownedLengthE, ownedLength.toString())
-        setText(_unownedLength, _unownedLengthE, unownedLength.toString())
-        setText(_mass, _massE, mass.toString())
-        setText(_energy, _energyE, energy.toString())
+        setFields(_ownedTime, _ownedTimeE, ownedTime.toString())
+        setFields(_unownedTime, _unownedTimeE, unownedTime.toString())
+        setFields(_ownedLength, _ownedLengthE, ownedLength.toString())
+        setFields(_unownedLength, _unownedLengthE, unownedLength.toString())
+        setFields(_mass, _massE, mass.toString())
+        setFields(_energy, _energyE, energy.toString())
     }
     private fun magic() {
-        if(beta !== -1.0 && lightVel !== -1.0) {
+        if(beta != -1.0 && lightVel != -1.0) {
             velocity = lightVel * beta
         }
-        if(velocity !== -1.0 && lightVel !== -1.0) {
+        if(velocity != -1.0 && lightVel != -1.0) {
             beta = velocity / lightVel
             xi = 1/sqrt(1-beta.pow(2))
         }
-        if(beta !== -1.0 && xi !== -1.0) {
-            if (ownedTime !== -1.0) unownedTime = xi * ownedTime
+        if(beta != -1.0 && xi != -1.0) {
+            if (ownedTime != -1.0) unownedTime = xi * ownedTime
             else ownedTime = unownedTime / xi
 
-            if(ownedLength !== -1.0) unownedLength = ownedLength / xi
+            if(ownedLength != -1.0) unownedLength = ownedLength / xi
             else ownedLength = xi * unownedLength
         }
-        if(lightVel !== -1.0 && mass !== -1.0) {
+        if(lightVel != -1.0 && mass != -1.0) {
             energy = if(velocity == -1.0) mass * lightVel.pow(2)
             else sqrt((mass * lightVel.pow(2)).pow(2) + (mass * velocity * lightVel).pow(2))
         }
-        if(xi !== -1.0) {
-            if(ownedMass !== -1.0) unownedMass = xi * ownedMass
+        if(xi != -1.0) {
+            if(ownedMass != -1.0) unownedMass = xi * ownedMass
             else ownedMass = unownedMass / xi
         }
     }

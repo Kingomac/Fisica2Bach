@@ -13,21 +13,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Física 2º Bach"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
         <View
             android:id="@+id/divider2"
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:layout_weight="1"
-            android:background="?android:attr/listDivider" />
+            android:background="@android:color/background_light" />
 
         <TextView
             android:id="@+id/textView5"
@@ -72,7 +63,7 @@
             android:id="@+id/divider"
             android:layout_width="match_parent"
             android:layout_height="10dp"
-            android:background="?android:attr/listDivider" />
+            android:background="@android:color/background_light" />
 
         <TextView
             android:id="@+id/textView6"
