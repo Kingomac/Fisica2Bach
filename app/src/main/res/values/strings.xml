@@ -1,9 +1,8 @@
 <resources>
-    <string name="app_name">TestingApp</string>
+    <string name="app_name">Física 2 Bach</string>
     <string name="G_const_unit">N · m^2 · kg^-1</string>
     <string name="exponential_10">x 10^</string>
     <string name="G_const">Constante de gravitación</string>
-    <string name="title_activity_circular_orbit">CircularOrbit</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -12,5 +11,8 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="title_activity_gravitation">Gravitation</string>
+
+    <string name="title_activity_circular_orbit">Órbita circular</string>
+    <string name="title_activity_gravitation">Gravitación</string>
+    <string name="title_activity_relativity">Relatividad</string>
 </resources>

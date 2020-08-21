@@ -309,6 +309,13 @@
                 android:text="Momento angular"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/periodText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Período"
+                android:textAlignment="center" />
+
             <View
                 android:id="@+id/divider6"
                 android:layout_width="match_parent"

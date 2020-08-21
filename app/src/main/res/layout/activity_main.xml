@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:layout_weight="1"
-            android:background="@android:color/background_light" />
+            android:background="#FAFAFA" />
 
         <TextView
             android:id="@+id/textView5"
@@ -55,6 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="onEllipticalOrbitClick"
                 android:text="Órbitas elípticas"
                 android:textSize="12sp" />
         </LinearLayout>
@@ -63,7 +64,7 @@
             android:id="@+id/divider"
             android:layout_width="match_parent"
             android:layout_height="10dp"
-            android:background="@android:color/background_light" />
+            android:background="#FAFAFA" />
 
         <TextView
             android:id="@+id/textView6"

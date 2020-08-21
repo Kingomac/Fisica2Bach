@@ -45,10 +45,16 @@ class EllipticalOrbit : AppCompatActivity() {
             if(velocity == -1.0) velocity = sqrt(2*gConst*mass*(1/rdist-1/(2*semiaxisA)))
         }
 
-        angularMomentText.text = if(afelio != -1.0 && planetMass != -1.0) {
-            (planetMass * afelio * sqrt(2*gConst*mass*(1/afelio-1/(2*semiaxisA)))).toString()
-        } else { "No se pudo calcular el momento angular" }
+        angularMomentText.text = if(afelio != -1.0 || perihelio != -1.0 && planetMass != -1.0) {
+            if(afelio != -1.0) (planetMass * afelio * sqrt(2*gConst*mass*(1/afelio-1/(2*semiaxisA)))).toString()
+            else (planetMass * perihelio * sqrt(2*gConst*mass*(1/perihelio-1/(2*semiaxisA)))).toString()
+        } else { "No se pudo calcular el momento angular. Ten en cuenta L = m · r · v (r = afelio o perihelio)" }
 
+        periodText.text = if(planetMass != -1.0 && semiaxisA != -1.0) {
+            sqrt((4* kotlin.math.PI.pow(2)*semiaxisA.pow(3))/(gConst*planetMass)).toString()
+        } else {
+            "No se pudo calcular el período. Ten en cuenta T^2 = (4* PI^2 * semieje mayor^3)/(GM)"
+        }
 
         setTexts(velocityText, velocityEText, velocity.toString())
         setFields(semiaxisAText, semiaxisAEText, semiaxisA.toString())
