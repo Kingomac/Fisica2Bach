@@ -1,12 +1,9 @@
-package com.example.testingapp
+package com.kingomac.fisica2bach
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.EditText
-import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_relativity.*
 import kotlin.math.pow
 import kotlin.math.sqrt

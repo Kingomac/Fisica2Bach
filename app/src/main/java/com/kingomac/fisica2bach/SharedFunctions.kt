@@ -1,4 +1,4 @@
-package com.example.testingapp
+package com.kingomac.fisica2bach
 
 import android.widget.EditText
 import android.widget.TextView

@@ -1,4 +1,4 @@
-package com.example.testingapp
+package com.kingomac.fisica2bach
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
