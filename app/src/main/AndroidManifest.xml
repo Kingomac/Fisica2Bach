@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".EllipticalOrbit" />
+        <activity android:name=".Quantum" android:label="@string/title_activity_quantum"></activity>
+        <activity android:name=".EllipticalOrbit" android:label="@string/title_activity_elliptical_orbit" />
         <activity
             android:name=".Gravitation"
             android:label="@string/title_activity_gravitation" />
@@ -19,7 +19,7 @@
             android:label="@string/title_activity_circular_orbit" />
         <activity
             android:name=".RelativityActivity"
-            android:label="@string/title_activity_relativity"/>
+            android:label="@string/title_activity_relativity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -33,29 +33,29 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/gravity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="onGravityClick"
+                android:onClick="openView"
                 android:text="Gravitación"
                 android:textSize="12sp" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/circularorbit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="onCircularOrbitClick"
+                android:onClick="openView"
                 android:text="Órbitas circulares"
                 android:textSize="12sp" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/ellipticalorbit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="onEllipticalOrbitClick"
+                android:onClick="openView"
                 android:text="Órbitas elípticas"
                 android:textSize="12sp" />
         </LinearLayout>
@@ -80,18 +80,19 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/relativityBtn"
+                android:id="@+id/relativity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="onRelativityClick"
+                android:onClick="openView"
                 android:text="Relativista" />
 
             <Button
-                android:id="@+id/button8"
+                android:id="@+id/quantum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="openView"
                 android:text="Cuántica" />
 
             <Button

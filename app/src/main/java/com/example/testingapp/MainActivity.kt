@@ -24,16 +24,13 @@ class MainActivity : AppCompatActivity() {
         supportActionBar!!.title = "Física 2 Bach"
     }
 
-    fun onCircularOrbitClick(view:View) {
-        startActivity(Intent(this,CircularOrbit::class.java))
-    }
-    fun onRelativityClick(view: View) {
-        startActivity(Intent(this, RelativityActivity::class.java))
-    }
-    fun onGravityClick(view: View) {
-        startActivity(Intent(this, Gravitation::class.java))
-    }
-    fun onEllipticalOrbitClick(view: View) {
-        startActivity(Intent(this, EllipticalOrbit::class.java))
+    fun openView(view: View) {
+        when(view.resources.getResourceEntryName(view.id)){
+            "circularorbit"-> startActivity(Intent(this,CircularOrbit::class.java))
+            "gravity"-> startActivity(Intent(this, Gravitation::class.java))
+            "ellipticalorbit"-> startActivity(Intent(this, EllipticalOrbit::class.java))
+            "relativity"-> startActivity(Intent(this, RelativityActivity::class.java))
+            "quantum"-> startActivity(Intent(this, Quantum::class.java))
+        }
     }
 }
