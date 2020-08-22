@@ -48,6 +48,10 @@ fun setTexts(numET:TextView, numExET:TextView, value:String){
     if(value.contains('E')) {
         num.number = value.substring(0, value.indexOf("E")).toDouble()
         num.exponential = value.substring(value.indexOf("E") + 1, value.length).toInt()
+    }
+    else if(value == "null"){
+        num.number = 0.0
+        num.exponential = 0
     } else {
         num = getScienceNotation(value.toDouble())
     }
