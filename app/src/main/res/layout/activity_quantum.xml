@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:layout_height="match_parent"
-    android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Quantum"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Quantum">
 
     <ScrollView
         android:layout_width="wrap_content"
@@ -43,7 +43,7 @@
 
                 <EditText
                     android:id="@+id/plankConstText"
-                    android:layout_width="132dp"
+                    android:layout_width="106dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
@@ -61,7 +61,7 @@
 
                 <EditText
                     android:id="@+id/plankConstEText"
-                    android:layout_width="37dp"
+                    android:layout_width="47dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
@@ -130,53 +130,150 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="match_parent"
                 android:orientation="horizontal">
 
+                <TextView
+                    android:id="@+id/textView102"
+                    android:layout_width="107dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Velocidad de la luz"
+                    android:textAlignment="center" />
+
                 <EditText
-                    android:id="@+id/lightVelText"
+                    android:id="@+id/velLuzText"
                     android:layout_width="132dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:hint="3 x10^8 (m·s-1)"
+                    android:focusedByDefault="false"
+                    android:hint="3"
                     android:inputType="numberSigned|numberDecimal"
                     android:textAlignment="center" />
 
                 <TextView
-                    android:id="@+id/textView81"
+                    android:id="@+id/textView103"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="="
+                    android:text="x10^"
                     android:textAlignment="center" />
 
                 <EditText
-                    android:id="@+id/waveLengthText"
+                    android:id="@+id/velLuzEText"
+                    android:layout_width="37dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:autofillHints="8"
+                    android:ems="10"
+                    android:hint="8"
+                    android:inputType="numberSigned"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView104"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="m·s-1"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView105"
+                    android:layout_width="107dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Longitud de onda"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/longitudOndaText"
                     android:layout_width="132dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:hint="λ (nm)"
+                    android:focusedByDefault="false"
                     android:inputType="numberSigned|numberDecimal"
                     android:textAlignment="center" />
 
                 <TextView
-                    android:id="@+id/textView82"
+                    android:id="@+id/textView106"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="x"
+                    android:text="x10^"
                     android:textAlignment="center" />
 
                 <EditText
-                    android:id="@+id/photonFreqText"
+                    android:id="@+id/longitudOndaEText"
+                    android:layout_width="37dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberSigned"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView107"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="m"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView108"
+                    android:layout_width="107dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Frecuencia"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/frecText"
                     android:layout_width="132dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:hint="f (Hz)"
                     android:inputType="numberSigned|numberDecimal"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView109"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="x10^"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/frecEText"
+                    android:layout_width="37dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberSigned"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView110"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Hz"
                     android:textAlignment="center" />
             </LinearLayout>
 
@@ -417,11 +514,429 @@
 
             </LinearLayout>
 
+            <View
+                android:id="@+id/divider8"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:background="#00FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView101"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Radiación térmica de un cuerpo negro"
+                android:textAlignment="center" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView81"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Energía" />
+
+                <EditText
+                    android:id="@+id/radEnergiaText"
+                    android:layout_width="132dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberSigned|numberDecimal"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView82"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="x10^"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/radEnergiaEText"
+                    android:layout_width="37dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberSigned"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView111"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="J"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView112"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Frecuencia" />
+
+                <EditText
+                    android:id="@+id/radFrecText"
+                    android:layout_width="132dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberSigned|numberDecimal"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView113"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="x10^"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/radFrecEText"
+                    android:layout_width="37dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberSigned"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView114"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Hz"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider9"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:background="#00FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView115"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dualidad onda corpúsculo"
+                android:textAlignment="center" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView116"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Longitud de onda" />
+
+                <EditText
+                    android:id="@+id/docLongOndaText"
+                    android:layout_width="132dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberSigned|numberDecimal"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView117"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="x10^"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/docLongOndaEText"
+                    android:layout_width="37dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberSigned"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView118"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="m"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView119"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Masa" />
+
+                <EditText
+                    android:id="@+id/docMasaText"
+                    android:layout_width="132dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberSigned|numberDecimal"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView120"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="x10^"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/docMasaEText"
+                    android:layout_width="37dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberSigned"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView121"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="kg"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView122"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Velocidad" />
+
+                <EditText
+                    android:id="@+id/docVelText"
+                    android:layout_width="132dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberSigned|numberDecimal"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView123"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="x10^"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/docVelEText"
+                    android:layout_width="37dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberSigned"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView124"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="m·s-1"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider10"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:background="#00FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView125"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Principio de incerteza"
+                android:textAlignment="center" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView126"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Incerteza de la posición" />
+
+                <EditText
+                    android:id="@+id/incPosText"
+                    android:layout_width="132dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberSigned|numberDecimal"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView127"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="x10^"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/incPosEText"
+                    android:layout_width="37dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberSigned"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView128"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="m"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView129"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Incerteza de la velocidad" />
+
+                <EditText
+                    android:id="@+id/incVelText"
+                    android:layout_width="132dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberSigned|numberDecimal"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView130"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="x10^"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/incVelEText"
+                    android:layout_width="37dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberSigned"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView131"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="m·s-1"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView132"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Masa" />
+
+                <EditText
+                    android:id="@+id/incMasaText"
+                    android:layout_width="132dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberSigned|numberDecimal"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView133"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="x10^"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/incMasaEText"
+                    android:layout_width="37dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="numberSigned"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/textView134"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="kg"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
             <Button
                 android:id="@+id/button4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="calculatePhotoelectricEffect"
+                android:onClick="calcular"
                 android:text="Calcular" />
 
         </LinearLayout>

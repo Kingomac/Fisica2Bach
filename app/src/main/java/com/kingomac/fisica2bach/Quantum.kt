@@ -15,6 +15,32 @@ class Quantum : AppCompatActivity() {
     private var plankConst:Double = 0.0
     private var electronCharge: Double = 0.0
     private var lightVel: Double = 0.0
+
+
+    fun calcular(view: View) {
+        calculatePhotoelectricEffect()
+        calcularRadiacion()
+    }
+
+    private var radEnergia: Double? = null
+    private var radFrec: Double? = null
+
+    private fun calcularRadiacion() {
+        radEnergia = try {
+            radEnergiaText.text.toString().toDouble() * 10.0.pow(radEnergiaEText.text.toString().toDouble())
+        } catch (e:Exception) { null }
+        radFrec = try {
+            radFrecText.text.toString().toDouble() * 10.0.pow(radFrecEText.text.toString().toDouble())
+        } catch (e:Exception) { null }
+
+        for (i in 1 until 2) {
+            if(radFrec != null) radEnergia = radFrec!! * plankConst
+            if(radEnergia != null) radFrec = radEnergia!! / plankConst
+        }
+        setTexts(radEnergiaText, radEnergiaEText, radEnergia.toString())
+        setTexts(radFrecText, radFrecEText, radFrec.toString())
+    }
+
     private var waveLength: Double? = null
     private var photonFreq: Double? = null
     private var photonEnergy: Double? = null
@@ -23,7 +49,7 @@ class Quantum : AppCompatActivity() {
     private var brakingPotential: Double? = null
     private var umbralFreq: Double? = null
 
-    fun calculatePhotoelectricEffect(view: View) {
+    private fun calculatePhotoelectricEffect() {
         plankConst = try {
             plankConstText.text.toString().toDouble() * 10.0.pow(plankConstEText.text.toString().toDouble())
         } catch (e:Exception) { 6.626 * 10.0.pow(-34) }
@@ -31,12 +57,14 @@ class Quantum : AppCompatActivity() {
             electronChargeText.text.toString().toDouble() * 10.0.pow(electronChargeEText.text.toString().toDouble())
         } catch (e:Exception) { 1.602 * 10.0.pow(-19) }
         lightVel = try {
-            lightVelText.text.toString().toDouble()
+            velLuzText.text.toString().toDouble() * 10.0.pow(velLuzEText.text.toString().toDouble())
         } catch (e:Exception) { 3.0 * 10.0.pow(8) }
         waveLength = try {
-            waveLengthText.text.toString().toDouble() * 10.0.pow(-9)
+            longitudOndaText.text.toString().toDouble() * 10.0.pow(longitudOndaEText.text.toString().toDouble())
         } catch (e:Exception) { null }
-        photonFreq = photonFreqText.text.toString().toDoubleOrNull()
+        photonFreq = try {
+            frecText.text.toString().toDouble() * 10.0.pow(frecEText.text.toString().toDouble())
+        } catch (e:Exception) { null }
         photonEnergy = try {
             photonEnergyText.text.toString().toDouble() * 10.0.pow(photonEnergyEText.text.toString().toDouble())
         } catch (e:Exception) { null }
@@ -53,33 +81,29 @@ class Quantum : AppCompatActivity() {
             umbralFreqText.text.toString().toDouble() * 10.0.pow(umbralFreqEText.text.toString().toDouble())
         } catch (e:Exception) { null }
 
-        photoelectricMagic()
-        photoelectricMagic()
+        for(i in 1 until 2) {
+            if(photonFreq != null) photonEnergy = plankConst * photonFreq!!
+            if(photonFreq == null && photonEnergy != null) photonFreq = photonEnergy!!/plankConst
 
-        waveLengthText.setText((try{
-            waveLength!! * 10.0.pow(9)
-        } catch (e:Exception) {0.0}).toString())
-        photonFreqText.setText(if (photonFreq == null) "0.0" else photonFreq.toString())
+            if(waveLength != null) photonFreq = lightVel/waveLength!!
+            if(photonFreq != null) waveLength = lightVel/photonFreq!!
+
+            if(extractionWork != null) umbralFreq = extractionWork!!/plankConst
+            if(umbralFreq != null) extractionWork = plankConst * umbralFreq!!
+            if(brakingPotential != null) kineticEnergy = electronCharge * brakingPotential!!
+            if(kineticEnergy != null) brakingPotential = kineticEnergy!! / electronCharge
+
+            if(kineticEnergy != null && extractionWork != null) photonEnergy = kineticEnergy!! + extractionWork!!
+            if(photonEnergy != null && kineticEnergy != null) extractionWork = photonEnergy!! - kineticEnergy!!
+            if(photonEnergy!= null && extractionWork != null) kineticEnergy = photonEnergy!! - extractionWork!!
+        }
+
+        setTexts(longitudOndaText, longitudOndaEText, waveLength.toString())
+        setTexts(frecText, frecEText, photonFreq.toString())
         setTexts(photonEnergyText,photonEnergyEText,photonEnergy.toString())
         setTexts(umbralFreqText,umbralFreqEText,umbralFreq.toString())
         setTexts(extractionWorkText,extractionWorkEText,extractionWork.toString())
         setTexts(kineticEnergyText,kineticEnergyEText,kineticEnergy.toString())
         setTexts(brakingPotentialText, brakingPotentialEText, brakingPotential.toString())
-    }
-    private fun photoelectricMagic() {
-        if(photonFreq != null) photonEnergy = plankConst * photonFreq!!
-        if(photonFreq == null && photonEnergy != null) photonFreq = photonEnergy!!/plankConst
-
-        if(waveLength != null) photonFreq = lightVel/waveLength!!
-        if(photonFreq != null) waveLength = lightVel/photonFreq!!
-
-        if(extractionWork != null) umbralFreq = extractionWork!!/plankConst
-        if(umbralFreq != null) extractionWork = plankConst * umbralFreq!!
-        if(brakingPotential != null) kineticEnergy = electronCharge * brakingPotential!!
-        if(kineticEnergy != null) brakingPotential = kineticEnergy!! / electronCharge
-
-        if(kineticEnergy != null && extractionWork != null) photonEnergy = kineticEnergy!! + extractionWork!!
-        if(photonEnergy != null && kineticEnergy != null) extractionWork = photonEnergy!! - kineticEnergy!!
-        if(photonEnergy!= null && extractionWork != null) kineticEnergy = photonEnergy!! - extractionWork!!
     }
 }
